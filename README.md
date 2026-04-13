@@ -19,6 +19,17 @@ This repository contains a set of focused Linux CLI tools:
 - `port` - show listening sockets and owning processes
 - `jwt` - decode and pretty-print JWT header/payload
 - `b64` - base64 encode/decode from args or stdin
+- `dirsize` - sorted directory sizes with inline bar chart
+- `caps` - readable Linux capability inspector for process/file
+- `fstype` - print filesystem type, mount options, and device
+- `inode` - inspect inode metadata and Linux inode flags
+- `todo` - scan codebase for TODO/FIXME/HACK/XXX comments
+- `inc` - resolve C/C++ #include dependencies without a compiler
+- `palette` - print terminal 256/truecolor palettes and escape code refs
+- `nstr` - classified strings extractor for binaries
+- `entropy` - per-block Shannon entropy chart for files
+- `bindiff` - byte-level binary diff with offset context
+- `hashfile` - compute md5/sha1/sha256/sha512/blake2 in one pass
 - `thumbgen` - extract a video thumbnail via FFmpeg C API (optional build target)
 
 ## Project layout
@@ -40,6 +51,17 @@ This repository contains a set of focused Linux CLI tools:
 - `port/` source and README for socket-to-process lookup
 - `jwt/` source and README for JWT inspection
 - `b64/` source and README for base64 encode/decode
+- `dirsize/` source and README for sorted size reports
+- `caps/` source and README for Linux capability inspection
+- `fstype/` source and README for filesystem metadata lookup
+- `inode/` source and README for inode inspection
+- `todo/` source and README for TODO-style comment scanning
+- `inc/` source and README for include dependency analysis
+- `palette/` source and README for terminal color palette output
+- `nstr/` source and README for classified string extraction
+- `entropy/` source and README for entropy analysis
+- `bindiff/` source and README for binary comparison
+- `hashfile/` source and README for multi-hash fingerprinting
 - `thumbgen/` source and README for frame extraction
 
 ## Build
@@ -73,6 +95,17 @@ Produced binaries:
 - `bin/port`
 - `bin/jwt`
 - `bin/b64`
+- `bin/dirsize`
+- `bin/caps`
+- `bin/fstype`
+- `bin/inode`
+- `bin/todo`
+- `bin/inc`
+- `bin/palette`
+- `bin/nstr`
+- `bin/entropy`
+- `bin/bindiff`
+- `bin/hashfile`
 - `bin/thumbgen` (only when FFmpeg dev libraries are installed)
 
 ## Quick examples
@@ -128,6 +161,39 @@ Produced binaries:
 
 # base64 encode/decode
 ./bin/b64 'hello world'
+
+# sorted directory sizes
+./bin/dirsize -n 20 ~
+
+# process/file capabilities
+./bin/caps $$
+
+# filesystem type and mount options
+./bin/fstype /var/log
+
+# inode metadata and flags
+./bin/inode /etc/passwd
+
+# scan TODO/FIXME/HACK/XXX comments
+./bin/todo .
+
+# include dependency tree
+./bin/inc -r -I include src/main.cpp
+
+# terminal palette preview
+./bin/palette --codes
+
+# classified strings from a binary
+./bin/nstr /bin/ls
+
+# entropy chart by block
+./bin/entropy /bin/ls
+
+# byte-level binary diff
+./bin/bindiff old.bin new.bin
+
+# compute all major hashes
+./bin/hashfile /bin/ls
 ```
 
 ## Tool docs
@@ -151,4 +217,15 @@ Each tool has dedicated documentation:
 - `port/README.md`
 - `jwt/README.md`
 - `b64/README.md`
+- `dirsize/README.md`
+- `caps/README.md`
+- `fstype/README.md`
+- `inode/README.md`
+- `todo/README.md`
+- `inc/README.md`
+- `palette/README.md`
+- `nstr/README.md`
+- `entropy/README.md`
+- `bindiff/README.md`
+- `hashfile/README.md`
 - `thumbgen/README.md`

@@ -40,6 +40,17 @@ add_utils_tool(epoch epoch/src/main.cpp)
 add_utils_tool(port port/src/main.cpp)
 add_utils_tool(jwt jwt/src/main.cpp)
 add_utils_tool(b64 b64/src/main.cpp)
+add_utils_tool(dirsize dirsize/src/main.cpp)
+add_utils_tool(caps caps/src/main.cpp)
+add_utils_tool(fstype fstype/src/main.cpp)
+add_utils_tool(inode inode/src/main.cpp)
+add_utils_tool(todo todo/src/main.cpp)
+add_utils_tool(inc inc/src/main.cpp)
+add_utils_tool(palette palette/src/main.cpp)
+add_utils_tool(nstr nstr/src/main.cpp)
+add_utils_tool(entropy entropy/src/main.cpp)
+add_utils_tool(bindiff bindiff/src/main.cpp)
+add_utils_tool(hashfile hashfile/src/main.cpp)
 
 set(UTILS_INSTALL_TARGETS
     ff
@@ -59,6 +70,17 @@ set(UTILS_INSTALL_TARGETS
     port
     jwt
     b64
+    dirsize
+    caps
+    fstype
+    inode
+    todo
+    inc
+    palette
+    nstr
+    entropy
+    bindiff
+    hashfile
 )
 
 find_package(PkgConfig QUIET)
