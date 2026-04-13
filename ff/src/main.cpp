@@ -389,6 +389,21 @@ static Config parse_args(int argc, char **argv)
     Config cfg;
     std::vector<std::string> positional;
 
+    auto expand_tilde = [](const std::string &p) -> fs::path
+    {
+        if (!p.empty() && p[0] == '~')
+        {
+            const char *home = std::getenv("HOME");
+            if (home && (p.size() == 1 || p[1] == '/'))
+            {
+                if (p.size() == 1)
+                    return fs::path(home);
+                return fs::path(home) / p.substr(2);
+            }
+        }
+        return fs::path(p);
+    };
+
     for (int i = 1; i < argc; ++i)
     {
         std::string_view arg = argv[i];
@@ -463,11 +478,18 @@ static Config parse_args(int argc, char **argv)
         }
     }
 
-    if (positional.size() >= 1)
-        cfg.pattern = positional[0];
-    if (positional.size() >= 2)
+    if (positional.size() == 1)
     {
-        cfg.root = positional[1];
+        fs::path one = expand_tilde(positional[0]);
+        if (fs::is_directory(one))
+            cfg.root = one;
+        else
+            cfg.pattern = positional[0];
+    }
+    else if (positional.size() >= 2)
+    {
+        cfg.pattern = positional[0];
+        cfg.root = expand_tilde(positional[1]);
         if (!fs::is_directory(cfg.root))
         {
             std::cerr << "ff: '" << positional[1] << "' is not a directory\n";
