@@ -31,6 +31,15 @@ add_utils_tool(git-summary git-summary/src/main.cpp)
 add_utils_tool(git-size git-size/src/main.cpp)
 add_utils_tool(hex hex/src/main.cpp)
 add_utils_tool(magic magic/src/main.cpp)
+add_utils_tool(sym sym/src/main.cpp)
+add_utils_tool(deps deps/src/main.cpp)
+add_utils_tool(elf elf/src/main.cpp)
+add_utils_tool(rpath rpath/src/main.cpp)
+add_utils_tool(socheck socheck/src/main.cpp)
+add_utils_tool(epoch epoch/src/main.cpp)
+add_utils_tool(port port/src/main.cpp)
+add_utils_tool(jwt jwt/src/main.cpp)
+add_utils_tool(b64 b64/src/main.cpp)
 
 set(UTILS_INSTALL_TARGETS
     ff
@@ -41,6 +50,15 @@ set(UTILS_INSTALL_TARGETS
     git-size
     hex
     magic
+    sym
+    deps
+    elf
+    rpath
+    socheck
+    epoch
+    port
+    jwt
+    b64
 )
 
 find_package(PkgConfig QUIET)
