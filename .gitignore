@@ -6,8 +6,38 @@
 !README.md
 !LICENSE
 
+!b64/
+!b64/**
+
+!bindiff/
+!bindiff/**
+
+!caps/
+!caps/**
+
+!changelog/
+!changelog/**
+
+!deps/
+!deps/**
+
+!dirsize/
+!dirsize/**
+
+!elf/
+!elf/**
+
+!entropy/
+!entropy/**
+
+!epoch/
+!epoch/**
+
 !ff/
 !ff/**
+
+!fstype/
+!fstype/**
 
 !git-size/
 !git-size/**
@@ -15,8 +45,20 @@
 !git-summary/
 !git-summary/**
 
+!hashfile/
+!hashfile/**
+
 !hex/
 !hex/**
+
+!inc/
+!inc/**
+
+!inode/
+!inode/**
+
+!jwt/
+!jwt/**
 
 !lip/
 !lip/**
@@ -24,11 +66,35 @@
 !magic/
 !magic/**
 
+!nstr/
+!nstr/**
+
+!palette/
+!palette/**
+
 !pfd/
 !pfd/**
+
+!port/
+!port/**
 
 !rn/
 !rn/**
 
+!rpath/
+!rpath/**
+
+!socheck/
+!socheck/**
+
+!sslinfo/
+!sslinfo/**
+
+!sym/
+!sym/**
+
 !thumbgen/
 !thumbgen/**
+
+!todo/
+!todo/**
